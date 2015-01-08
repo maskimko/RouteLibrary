@@ -5,10 +5,10 @@
  */
 package ua.pp.msk.project1.lib.routelibrary;
 
-import ua.pp.msk.project1.lib.routelibrary.ArpTableInformationImpl;
-import ua.pp.msk.project1.lib.routelibrary.ArpTableRecord;
 import java.util.List;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
 
 /**
  *
@@ -22,7 +22,7 @@ public class ArpTableInformationImplTest {
     /**
      * Test of getArpTable method, of class ArpTableInformationImpl.
      */
-   // @Test
+    @Test
     public void testGetArpTable() {
         System.out.println("getArpTable");
         ArpTableInformationImpl instance = new ArpTableInformationImpl();

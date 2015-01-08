@@ -5,13 +5,11 @@
  */
 package ua.pp.msk.project1.lib.routelibrary;
 
-import ua.pp.msk.project1.lib.routelibrary.RouteTableLinuxRecord;
-import ua.pp.msk.project1.lib.routelibrary.RouteTableInformationImpl;
 import java.util.List;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
-import junit.framework.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
 
 
 
@@ -167,7 +165,7 @@ public class RouteTableInformationImplTest {
     /**
      * Test of getRoutes method, of class RouteTableInformationImpl.
      */
-    //@Test
+    @Test
     public void testGetRoutes() {
         System.out.println("getRoutes");
         RouteTableInformationImpl instance = new RouteTableInformationImpl();
@@ -181,6 +179,7 @@ public class RouteTableInformationImplTest {
     /**
      * Test of macToString method, of class RouteTableInformationImpl.
      */
+    @Test
     public void testMacToString() {
         System.out.println("macToString");
         byte[] mac = new byte[]{(byte)0x01, (byte)0x02, (byte)0xef, (byte)0x34, (byte)0xff, (byte)0xba};
