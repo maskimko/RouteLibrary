@@ -8,8 +8,14 @@ package ua.pp.msk.project1.lib.routelibrary;
 import ua.pp.msk.project1.lib.routelibrary.RouteTableLinuxRecord;
 import ua.pp.msk.project1.lib.routelibrary.RouteTableInformationImpl;
 import java.util.List;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.fail;
+import junit.framework.Test;
+
+
+
+
 
 /**
  *
@@ -18,9 +24,7 @@ import static org.junit.Assert.*;
 public class RouteTableInformationImplTest {
     
     
-    public RouteTableInformationImplTest() {
-    }
-
+ 
   
 
 //    /**
@@ -163,13 +167,28 @@ public class RouteTableInformationImplTest {
     /**
      * Test of getRoutes method, of class RouteTableInformationImpl.
      */
-    @Test
+    //@Test
     public void testGetRoutes() {
         System.out.println("getRoutes");
         RouteTableInformationImpl instance = new RouteTableInformationImpl();
         List<RouteTableLinuxRecord> result = instance.getRoutes();
         assertTrue(result.size() > 0);
      
+    }
+
+  
+
+    /**
+     * Test of macToString method, of class RouteTableInformationImpl.
+     */
+    public void testMacToString() {
+        System.out.println("macToString");
+        byte[] mac = new byte[]{(byte)0x01, (byte)0x02, (byte)0xef, (byte)0x34, (byte)0xff, (byte)0xba};
+        RouteTableInformationImpl instance = new RouteTableInformationImpl();
+        String expResult = "01:02:EF:34:FF:BA";
+        String result = instance.macToString(mac);
+        assertEquals(expResult, result);
+       
     }
 
 }
